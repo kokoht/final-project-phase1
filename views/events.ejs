@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title> <%= pageTitle %> </title>
+    <%- include partials/menubar %>
   </head>
   <body>
 <!-- <h3> <%= JSON.stringify(panggilData) %></h3> -->
@@ -33,7 +34,6 @@
     <th> <%= event.venue %> </th>
     <td> <%= panggilStatus[rows] %></td>
     <% rows++ %>
-
     <th><a href="/events/edit/<%= event.id %>">Edit</a></th>
     <th> <a href="/events/delete/<%= event.id %>">Delete</a> </th>
     </tr>
@@ -42,7 +42,7 @@
   <table>
 <br>
 <br>
-<a href="/events/add/">Add Lucrative Event</a>
+<a href="/events/add/">Add More Lucrative Event</a>
 <br>
 
   </body>

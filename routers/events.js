@@ -2,27 +2,29 @@ var express = require('express');
 var router = express.Router();
 
 const Models = require('../models');
- const stat = require('../helpers/status')
+const stat = require('../helpers/status')
 
 
 
 //============= start here ============
 
-// 1. sudah nampilin all table !!
-// router.get('/', function(req, res){
-//   Models.EventUser.findAll({
-//     order: [['Event', 'date', 'ASC']],
-//     *blm kepake 3 row ini //  where: {
-//     //    EventId: req.params.id
-//     //  },
-//     include: [{all: true}]
-//   })
-//   .then(function(data){
-//     console.log('xxx',data);
-//       res.render('events', {panggilData: data
-//       })
-//   })
-// })
+//1. sudah nampilin all table !!
+router.get('/many/:id', function(req, res){
+  Models.EventUser.findAll({
+    order: [['Event', 'date', 'ASC']],
+    where: {
+       EventId: req.params.id
+     },
+    include: [{all: true}]
+  })
+  .then(function(data){
+    console.log('yyy',data);
+      res.render('many', {panggilData: data
+      })
+  })
+})
+
+//===============================================
 
 // 2. CRUD
 // a. tampilin data all events
