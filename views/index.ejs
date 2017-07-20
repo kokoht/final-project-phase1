@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> P Darso App </title>
+  </head>
+  <body>
+    <h1>** Welcome User to Pak Darso APP ** </h1>
+    <% if(activeUser === undefined) { %>
+      <p>You have not login yet</p>
+      <a href="/login"> Login </a>
+    <% } else { %>
+      <p>You've already login </p>
+      <a href="/dashboard"> Dashboard </a>
+    <% }  %>
+    <br>
+    <br>
+    OR
+    <br>
+    <p>Please Sign Up Here:</p>
+    <a href="/signup"> Registration Page </a>
+  </body>
+</html>
