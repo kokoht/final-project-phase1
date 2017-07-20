@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> P Darso APP </title>
+    <%- include partials/menubar %>
+  </head>
+  <body>
+    <h1> Add Event Data </h1>
+    <br>
+    <br>
+    <a href="/events"> Show Available Event </a>
+    <form action="/events/add" method="post">
+          Name:
+      <input type="text" name="name" placeholder="input event name"><br>
+      Ticket Price
+    <input type="text" name="ticket_price" placeholder="input ticket price"><br>
+    Venue:
+    <input type="text" name="venue" placeholder="input venue"><br>
+    Status:
+    <input type="text" name="status" placeholder="input status"><br>
+    Date:
+    <input type="datetime-local" name="date"><br>
+      <button type="submit"> submit </button>
+    </form>
+  </body>
+</html>

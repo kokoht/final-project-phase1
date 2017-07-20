@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <%= pageTitle %> </title>
+  </head>
+  <body>
+<!-- <h3> <%= JSON.stringify(panggilData) %></h3> -->
+
+  <br>
+  <h1> WELCOME EVENT MASTER  </h1>
+  <br>
+  <h1> EVENTS LIST  </h1>
+  <!-- <a href="students/add"> Add Student </a> -->
+  <table>
+    <thead>
+      <tr>
+        <th> No </th>
+          <th> Event Name </th>
+          <th> Ticket Price </th>
+          <th> Venue </th>
+          <th> Date </th>
+        </tr>
+      </thead>
+    <tbody>
+        <% var rows = 0 %>
+      <% let number = 1 %>
+      <% if(panggilData) {panggilData.forEach(function(event) { %>
+    <tr>
+    <th> <%= number++ %> </th>
+    <th> <%= event.name %> </th>
+    <th> <%= event.ticket_price %> </th>
+    <th> <%= event.venue %> </th>
+    <td> <%= panggilStatus[rows] %></td>
+    <% rows++ %>
+
+    <th><a href="/events/edit/<%= event.id %>">Edit</a></th>
+    <th> <a href="/events/delete/<%= event.id %>">Delete</a> </th>
+    </tr>
+      <%  })} %>
+    </tbody>
+  <table>
+<br>
+<br>
+<a href="/events/add/">Add Lucrative Event</a>
+<br>
+
+  </body>
+</html>
