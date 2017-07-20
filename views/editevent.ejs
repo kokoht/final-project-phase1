@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>  P Darso APP </title>
+    <%- include partials/menubar %>
+  </head>
+  <body>
+<br>
+<br>
+<h1>Edit Event Data </h1>
+<a href="/events"> Show All Available Event </a>
+
+<form action="/events/edit/<%= panggilData.id %>" method="post">
+  Name:
+  <input type="text" name="name" value='<%= panggilData.name %>'><br>
+  Ticket Price:
+  <input type="text" name="ticket_price" value='<%= panggilData.ticket_price %>'><br>
+  Venue:
+  <input type="text" name="venue" value='<%= panggilData.venue %>'><br>
+  Status:
+  <input type="text" name="status" value='<%= panggilData.status %>'><br>
+  Date:
+  <input type="datetime-local" name="date"><br>
+  <button type="submit">Submit Editing</button>
+</form>
+</body>
+</html>
