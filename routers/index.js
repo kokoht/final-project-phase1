@@ -26,6 +26,11 @@ router.post('/signup', function(req,res, next){
   .then(function(){
     res.redirect('/login')
   })
+  .catch(err => {
+    res.render('errorpage', {
+	     panggilData: err.message}
+      )
+    })
 })
 
 router.get('/logout', function(req, res, next) {
