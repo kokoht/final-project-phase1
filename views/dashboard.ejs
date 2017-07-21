@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <%= pageTitle %></title>
+     <%- include partials/menubar %>
+
+  </head>
+  <body>
+    <br>
+    <br>
+    <table>
+    <tr><th><h2> Hi <%- activeUser.username %></h2> </th></tr>
+  </table>
+    <br>
+    <br>
+  <ul>
+    <% options.forEach(option => { %>
+      <li><a href="<%- option %>"><%- option %></a></li>
+    <% })%>
+  </ul>
+  <ul>
+    <li><a>You've been log in as: <%- activeUser.role %></a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+  </body>
+</html>
